@@ -5,4 +5,4 @@ compatibility_date = "2024-05-04"
 command = "pnpm install && pnpm build"
 
 [site]
-bucket = "out" 
+bucket = ".next/static" 
