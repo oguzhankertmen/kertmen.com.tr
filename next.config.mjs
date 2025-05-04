@@ -1,14 +1,16 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // CloudFlare Pages ile uyumlu yapılandırma
-  output: 'export',
-  // Statik HTML dışa aktarımı sırasında görüntüleri optimize etme
+  // CloudFlare Workers ile uyumlu yapılandırma
+  output: 'standalone',
+  // Görüntü optimizasyonu için CloudFlare Images'ı kullan
   images: {
-    unoptimized: true,
+    loader: 'custom',
+    loaderFile: './app/image-loader.ts',
   },
-  // CloudFlare Pages'in _routes.json dosyasını kullanmasını sağla
-  // Bu, tüm rotaların doğru şekilde işlenmesini sağlar
-  trailingSlash: false,
+  // CloudFlare Workers için gerekli yapılandırmalar
+  experimental: {
+    serverActions: true,
+  },
   eslint: {
     ignoreDuringBuilds: true,
   },
