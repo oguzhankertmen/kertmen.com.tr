@@ -1,18 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // CloudFlare Workers ile uyumlu yapılandırma
-  output: 'standalone',
+  // Statik export için yapılandırma
+  output: 'export',
   // Görüntü optimizasyonu için CloudFlare Images'ı kullan
   images: {
-    loader: 'custom',
-    loaderFile: './app/image-loader.ts',
+    unoptimized: true,
   },
-  // CloudFlare Workers için gerekli yapılandırmalar
-  experimental: {
-    serverActions: {
-      allowedOrigins: ['kertmen.com.tr'],
-    },
-  },
+  // Statik export için gerekli yapılandırmalar
+  trailingSlash: true,
   eslint: {
     ignoreDuringBuilds: true,
   },
