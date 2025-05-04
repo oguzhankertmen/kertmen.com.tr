@@ -9,7 +9,9 @@ const nextConfig = {
   },
   // CloudFlare Workers için gerekli yapılandırmalar
   experimental: {
-    serverActions: true,
+    serverActions: {
+      allowedOrigins: ['kertmen.com.tr'],
+    },
   },
   eslint: {
     ignoreDuringBuilds: true,
