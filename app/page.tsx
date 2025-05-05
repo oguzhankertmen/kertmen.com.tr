@@ -4,7 +4,7 @@ import type React from "react"
 
 import Link from "next/link"
 import Image from "next/image"
-import { ArrowRight, Github, Linkedin, Mail } from "lucide-react"
+import { ArrowRight, GithubIcon, LinkedinIcon, Mail, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { SocialLink } from "@/components/social-link"
 import { useLocale } from "@/hooks/use-locale"
@@ -69,7 +69,7 @@ export default function Home() {
         {/* Hakkımda Bölümü */}
         <motion.section className="flex flex-col items-center text-center" variants={item}>
           <div className="mb-6 relative w-24 h-24 overflow-hidden rounded-full border-2 border-neutral-200 dark:border-neutral-800">
-            <Image src="/placeholder.svg?height=200&width=200" alt="Oğuzhan Kertmen" fill className="object-cover" />
+            <Image src="/about-photo.jpg?height=200&width=200" alt="Oğuzhan Kertmen" fill className="object-cover" />
           </div>
 
           <h1 className="text-3xl font-bold mb-2">Oğuzhan Kertmen</h1>
@@ -78,10 +78,10 @@ export default function Home() {
           <p className="text-neutral-600 dark:text-neutral-400 max-w-lg mb-8">{t("home.intro")}</p>
 
           <div className="flex space-x-4 mb-8">
-            <SocialLink href="https://github.com/kertmen" icon={<Github className="h-5 w-5" />} label="GitHub" />
-            <SocialLink href="https://x.com/kertmen" icon={<XIcon className="h-5 w-5" />} label="X (Twitter)" />
+            <SocialLink href="https://github.com/oguzhankertmen" icon={<Github className="h-5 w-5" />} label="GitHub" />
+            <SocialLink href="https://x.com/Obivankenogi" icon={<X className="h-5 w-5" />} label="X (Twitter)" />
             <SocialLink
-              href="https://linkedin.com/in/kertmen"
+              href="https://linkedin.com/in/oguzhan-kertmen"
               icon={<Linkedin className="h-5 w-5" />}
               label="LinkedIn"
             />
