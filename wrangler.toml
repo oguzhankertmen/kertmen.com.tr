@@ -1,5 +1,7 @@
 name = "kertmen-website"
 compatibility_date = "2025-05-05"
+main = "./workers-site/index.js"
+account_id = ""
 
 [site]
 bucket = "./out"
@@ -9,5 +11,5 @@ command = "pnpm run build"
 
 [env.production]
 routes = [
-  { pattern = "/*", zone_name = "kertmen.com.tr" }
+  { pattern = "kertmen.com.tr/*", zone_id = "" }
 ] 
