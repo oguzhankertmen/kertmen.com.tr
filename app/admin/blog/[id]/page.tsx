@@ -9,6 +9,16 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { ArrowLeft, Save } from "lucide-react"
 import Link from "next/link"
 
+// Statik export için gerekli parametreleri tanımla
+export function generateStaticParams() {
+  // Varsayılan olarak en az bir ID için statik sayfa oluştur
+  return [
+    { id: "swiftui-modern-ui-tasarimi" },
+    { id: "ios-16-yeni-ozellikler" },
+    { id: "new" } // Yeni yazı oluşturmak için
+  ]
+}
+
 export default function EditBlogPost({ params }: { params: { id: string } }) {
   const [post, setPost] = useState({
     title: "SwiftUI ile Modern UI Tasarımı",
