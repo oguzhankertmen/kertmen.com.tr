@@ -6,13 +6,26 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  // Statik export için gerekli yapılandırmalar
+  // Dinamik sayfaları belirt
   trailingSlash: true,
   eslint: {
     ignoreDuringBuilds: true,
   },
   typescript: {
     ignoreBuildErrors: true,
+  },
+  // Statik olarak oluşturulacak sayfaları belirt
+  exportPathMap: async function () {
+    return {
+      '/': { page: '/' },
+      '/blog': { page: '/blog' },
+      '/hakkimda': { page: '/hakkimda' },
+      '/iletisim': { page: '/iletisim' },
+      '/bookmarks': { page: '/bookmarks' },
+      '/admin': { page: '/admin' },
+      '/admin/blog': { page: '/admin/blog' },
+      '/admin/login': { page: '/admin/login' },
+    }
   },
 };
 

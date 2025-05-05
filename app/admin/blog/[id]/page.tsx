@@ -10,14 +10,6 @@ import { ArrowLeft, Save } from "lucide-react"
 import Link from "next/link"
 import { useLocale } from "@/hooks/use-locale"
 
-// Statik olarak oluşturulacak admin blog yazılarının ID'lerini tanımla
-export async function generateStaticParams() {
-  return [
-    { id: '1' },
-    // Diğer blog yazılarının ID'lerini buraya ekleyebilirsiniz
-  ]
-}
-
 export default function EditBlogPost({ params }: { params: { id: string } }) {
   const [post, setPost] = useState({
     title: "SwiftUI ile Modern UI Tasarımı",
