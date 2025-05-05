@@ -5,6 +5,8 @@ import { Header } from "@/components/header"
 import { LocaleProvider } from "@/hooks/use-locale"
 import { ThemeProvider } from "@/hooks/use-theme"
 import { Footer } from "@/components/footer"
+// Eski ikon bileşenlerini tüm uygulama için yükle
+import "@/components/icons"
 
 const inter = Inter({ subsets: ["latin"] })
 
