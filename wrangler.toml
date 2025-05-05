@@ -1,5 +1,4 @@
 name = "kertmen-website"
-main = "./.next/server/app/page.js"
 compatibility_date = "2025-05-05"
 
 [site]
@@ -7,7 +6,6 @@ bucket = "./out"
 
 [build]
 command = "pnpm run build"
-output_directory = "out"
 
 [env.production]
 routes = [
