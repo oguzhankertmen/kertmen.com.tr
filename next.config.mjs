@@ -18,14 +18,8 @@ const nextConfig = {
   },
   // CloudFlare Workers için gerekli ayarlar
   experimental: {
-    // Statik HTML dışa aktarımı için gerekli
-    appDir: true,
     // Daha küçük paket boyutu için
     optimizeCss: true,
-    // Daha hızlı derleme için
-    turbotrace: {
-      logLevel: 'error',
-    },
   },
 };
 

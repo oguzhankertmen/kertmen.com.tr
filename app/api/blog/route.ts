@@ -1,5 +1,9 @@
 import { type NextRequest, NextResponse } from "next/server"
 
+// Statik export için gerekli yapılandırma
+export const dynamic = "force-static"
+export const revalidate = 3600 // Her saat başı yeniden oluştur
+
 // Blog yazılarını getir
 export async function GET(request: NextRequest) {
   try {
