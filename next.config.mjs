@@ -16,11 +16,9 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  // CloudFlare Workers için gerekli ayarlar
-  experimental: {
-    // Daha küçük paket boyutu için
-    optimizeCss: true,
-  },
+  // CSS optimizasyonu için ek seçenekler
+  optimizeCSS: false, // CSS optimizasyonunu devre dışı bırak
+  poweredByHeader: false
 };
 
 export default nextConfig;
