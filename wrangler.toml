@@ -1,4 +1,4 @@
-name = "kertmen-website"
+name = "kertmen-com-tr"
 compatibility_date = "2025-05-05"
 main = "./workers-site/index.js"
 account_id = ""
