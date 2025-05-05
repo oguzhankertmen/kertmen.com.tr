@@ -78,11 +78,11 @@ export default function Home() {
           <p className="text-neutral-600 dark:text-neutral-400 max-w-lg mb-8">{t("home.intro")}</p>
 
           <div className="flex space-x-4 mb-8">
-            <SocialLink href="https://github.com/oguzhankertmen" icon={<Github className="h-5 w-5" />} label="GitHub" />
-            <SocialLink href="https://x.com/Obivankenogi" icon={<X className="h-5 w-5" />} label="X (Twitter)" />
+            <SocialLink href="https://github.com/oguzhankertmen" icon={<GithubIcon className="h-5 w-5" />} label="GitHub" />
+            <SocialLink href="https://x.com/Obivankenogi" icon={<XIcon className="h-5 w-5" />} label="X (Twitter)" />
             <SocialLink
               href="https://linkedin.com/in/oguzhan-kertmen"
-              icon={<Linkedin className="h-5 w-5" />}
+              icon={<LinkedinIcon className="h-5 w-5" />}
               label="LinkedIn"
             />
             <SocialLink href="mailto:info@kertmen.com.tr" icon={<Mail className="h-5 w-5" />} label="E-posta" />
@@ -178,8 +178,6 @@ function XIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
@@ -188,8 +186,9 @@ function XIcon(props: React.SVGProps<SVGSVGElement>) {
       strokeLinejoin="round"
       {...props}
     >
-      <path d="M18 6L6 18" />
-      <path d="M6 6L18 18" />
+      <path d="M4 4l11.733 16h4.267l-11.733-16z" />
+      <path d="M4 20l6.768-6.768" />
+      <path d="M20 4l-7.955 7.955" />
     </svg>
   )
 }

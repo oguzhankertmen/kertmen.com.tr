@@ -57,6 +57,7 @@ export function LocaleProvider({ children }: { children: ReactNode }) {
 
   const t = (key: string): string => {
     if (!mounted) return dictionary["en"][key] || key
+    // Her seferinde dictionary'den al, önbelleklemeye izin verme
     return dictionary[locale]?.[key] || key
   }
 

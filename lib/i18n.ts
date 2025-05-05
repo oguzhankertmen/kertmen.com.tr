@@ -8,6 +8,9 @@ export type Dictionary = {
 
 export const dictionary: Dictionary = {
   tr: {
+    // import.meta.env value to disable cache in development
+    "__cache_bust": Date.now().toString(),
+
     // Navigation
     "nav.home": "Ana Sayfa",
     "nav.blog": "Blog",
@@ -18,7 +21,7 @@ export const dictionary: Dictionary = {
     // Home Page
     "home.title": "iOS Mühendisi & Mobil Uygulama Geliştirici",
     "home.intro":
-      "Merhaba, ben Oğuzhan. 5 yılı aşkın süredir iOS geliştirme alanında çalışıyorum. Kullanıcı deneyimini ön planda tutan, temiz kod yazan ve modern teknolojileri takip eden bir iOS geliştiricisiyim.",
+      "Merhaba, ben Oğuzhan. 3 yılı aşkın süredir iOS geliştirme alanında çalışıyorum. Kullanıcı deneyimini ön planda tutan, temiz kod yazan ve modern teknolojileri takip eden bir iOS geliştiricisiyim.",
     "home.projects": "Projelerim",
     "home.blog": "Blog Yazılarım",
     "home.featured": "Seçkin Projelerim",
@@ -61,20 +64,20 @@ export const dictionary: Dictionary = {
     "about.title": "Hakkımda",
     "about.backHome": "Ana Sayfaya Dön",
     "about.intro":
-      "Merhaba, ben Oğuzhan Kertmen. 5 yılı aşkın süredir iOS geliştirme alanında çalışıyorum. Kariyerim boyunca, kullanıcı deneyimini ön planda tutan, performanslı ve sürdürülebilir mobil uygulamalar geliştirmeye odaklandım.",
+      "Merhaba, ben Oğuzhan Kertmen. 3 yılı aşkın süredir iOS geliştirme alanında çalışıyorum. Kariyerim boyunca, kullanıcı deneyimini ön planda tutan, performanslı ve sürdürülebilir mobil uygulamalar geliştirmeye odaklandım.",
     "about.experience": "Deneyim",
     "about.experienceText":
-      "Kariyerime Apple'da başladım ve burada temel iOS geliştirme becerilerimi geliştirdim. Daha sonra Google'da kıdemli iOS geliştirici olarak çalıştım ve büyük ölçekli uygulamaların geliştirilmesinde önemli rol oynadım. Şu anda kendi şirketimde iOS ekip lideri olarak görev yapıyorum. Ekibimle birlikte, milyonlarca kullanıcıya hizmet veren uygulamalar geliştiriyoruz.",
+      "Zubizu - Doğuş Teknoloji\n Zip BNPL - Innovance Consultancy\n Juzdan - Innovance Consultancy/Akbank",
     "about.education": "Eğitim",
     "about.educationText":
-      "Boğaziçi Üniversitesi'nden Bilgisayar Mühendisliği bölümünden mezun oldum. Eğitimim sırasında, mobil uygulama geliştirme ve kullanıcı arayüzü tasarımı konularına özel ilgi gösterdim.",
+      "Karadeiz Teknik Üniversitesi - Bilgisayar Mühendisliği bölümünden mezun oldum. Eğitimim sırasında, mobil uygulama geliştirme ve kullanıcı arayüzü tasarımı konularına özel ilgi gösterdim.",
     "about.skills": "Beceriler",
     "about.interests": "İlgi Alanları",
     "about.interestsText":
-      "İş dışında, yeni teknolojileri takip etmeyi, açık kaynak projelere katkıda bulunmayı ve teknik makaleler yazmayı seviyorum. Ayrıca, doğa yürüyüşleri yapmak, fotoğrafçılık ve kitap okumak hobilerim arasında.",
+      "İş dışında, yeni teknolojileri takip etmeyi, açık kaynak projelere katkıda bulunmayı ve teknik makaleler yazmayı seviyorum. Ayrıca saatler ve Horoloji alanına da ilgi duyuyorum.",
     "about.contact": "İletişim",
     "about.contactText":
-      "Benimle iletişime geçmek, iş birliği yapmak veya sadece merhaba demek isterseniz, info@kertmen.com.tr adresinden bana ulaşabilirsiniz.",
+      "Benimle iletişime geçmek, iş birliği yapmak veya sadece merhaba demek isterseniz, oguzhan@kertmen.com.tr adresinden bana ulaşabilirsiniz.",
 
     // Bookmarks
     "bookmarks.title": "Yer İmleri",
@@ -102,7 +105,7 @@ export const dictionary: Dictionary = {
     "contact.social": "Sosyal Medya",
     "contact.location": "Konum",
     "contact.hours": "Çalışma Saatleri",
-    "contact.hoursText": "Pazartesi - Cuma: 09:00 - 18:00",
+    "contact.hoursText": "Pazartesi - Cuma: 08:00 - 17:00",
 
     // Footer
     "footer.rights": "Tüm hakları saklıdır.",
@@ -127,7 +130,7 @@ export const dictionary: Dictionary = {
     // Home Page
     "home.title": "iOS Engineer & Mobile App Developer",
     "home.intro":
-      "Hello, I'm Oğuzhan. I've been working in iOS development for over 5 years. I'm an iOS developer who prioritizes user experience, writes clean code, and follows modern technologies.",
+      "Hello, I'm Oğuzhan. I've been working in iOS development for over 3 years. I'm an iOS developer who prioritizes user experience, writes clean code, and follows modern technologies.",
     "home.projects": "My Projects",
     "home.blog": "My Blog Posts",
     "home.featured": "Featured Projects",
@@ -169,20 +172,20 @@ export const dictionary: Dictionary = {
     "about.title": "About Me",
     "about.backHome": "Back to Home",
     "about.intro":
-      "Hello, I'm Oğuzhan Kertmen. I've been working in iOS development for over 5 years. Throughout my career, I've focused on developing performant and sustainable mobile applications that prioritize user experience.",
+      "Hello, I'm Oğuzhan Kertmen. I've been working in iOS development for over 3 years. Throughout my career, I've focused on developing performant and sustainable mobile applications that prioritize user experience.",
     "about.experience": "Experience",
     "about.experienceText":
-      "I started my career at Apple where I developed my core iOS development skills. Later, I worked as a senior iOS developer at Google and played a significant role in developing large-scale applications. Currently, I'm serving as an iOS team leader at my own company. Together with my team, we develop applications that serve millions of users.",
+      "Zubizu - Dogus Technology\n Zip BNPL - Innovance Consultancy\n Juzdan - Innovance Consultancy/Akbank",
     "about.education": "Education",
     "about.educationText":
-      "I graduated from Boğaziçi University with a degree in Computer Engineering. During my education, I had a special interest in mobile application development and user interface design.",
+          "I graduated from Karadeniz Technical University with a degree in Computer Engineering. During my education, I had a special interest in mobile app development and user interface design.",
     "about.skills": "Skills",
     "about.interests": "Interests",
     "about.interestsText":
-      "Outside of work, I enjoy following new technologies, contributing to open source projects, and writing technical articles. Additionally, hiking, photography, and reading are among my hobbies.",
+      "Outside of work, I enjoy following new technologies, contributing to open source projects, and writing technical articles. Additionally, watches and horology are among my hobbies.",
     "about.contact": "Contact",
     "about.contactText":
-      "If you want to get in touch with me, collaborate, or just say hello, you can reach me at info@kertmen.com.tr.",
+      "If you want to get in touch with me, collaborate, or just say hello, you can reach me at oguzhan@kertmen.com.tr.",
 
     // Bookmarks
     "bookmarks.title": "Bookmarks",
@@ -209,7 +212,7 @@ export const dictionary: Dictionary = {
     "contact.social": "Social Media",
     "contact.location": "Location",
     "contact.hours": "Working Hours",
-    "contact.hoursText": "Monday - Friday: 09:00 - 18:00",
+    "contact.hoursText": "Monday - Friday: 08:00 - 17:00",
 
     // Footer
     "footer.rights": "All rights reserved.",

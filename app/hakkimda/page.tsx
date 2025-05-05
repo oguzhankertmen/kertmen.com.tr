@@ -4,7 +4,7 @@ import type React from "react"
 
 import Link from "next/link"
 import Image from "next/image"
-import { ArrowLeft, Github, Linkedin, Mail } from "lucide-react"
+import { ArrowLeft, GithubIcon, LinkedinIcon, Mail, X } from "lucide-react"
 import { SocialLink } from "@/components/social-link"
 import { useLocale } from "@/hooks/use-locale"
 import { motion } from "framer-motion"
@@ -45,21 +45,21 @@ export default function AboutPage() {
             <div className="sticky top-24">
               <div className="mb-6 relative w-32 h-32 overflow-hidden rounded-full border-2 border-neutral-200 dark:border-neutral-800 mx-auto md:mx-0">
                 <Image
-                  src="/placeholder.svg?height=200&width=200"
+                  src="/about-photo.jpg?height=200&width=200"
                   alt="Oğuzhan Kertmen"
                   fill
                   className="object-cover"
                 />
               </div>
               <div className="flex justify-center md:justify-start gap-3">
-                <SocialLink href="https://github.com/kertmen" icon={<Github className="h-4 w-4" />} label="GitHub" />
-                <SocialLink href="https://x.com/kertmen" icon={<XIcon className="h-4 w-4" />} label="X (Twitter)" />
+                <SocialLink href="https://github.com/oguzhankertmen" icon={<GithubIcon className="h-4 w-4" />} label="GitHub" />
+                <SocialLink href="https://x.com/Obivankenogi" icon={<XIcon  className="h-4 w-4" />} label="X (Twitter)" />
                 <SocialLink
-                  href="https://linkedin.com/in/kertmen"
-                  icon={<Linkedin className="h-4 w-4" />}
+                  href="https://linkedin.com/in/oguzhan-kertmen"
+                  icon={<LinkedinIcon className="h-4 w-4" />}
                   label="LinkedIn"
                 />
-                <SocialLink href="mailto:info@kertmen.com.tr" icon={<Mail className="h-4 w-4" />} label="E-posta" />
+                <SocialLink href="mailto:oguzhan@kertmen.com.tr" icon={<Mail className="h-4 w-4" />} label="E-posta" />
               </div>
             </div>
           </div>
@@ -68,21 +68,22 @@ export default function AboutPage() {
               <p>{t("about.intro")}</p>
 
               <h2>{t("about.experience")}</h2>
-              <p>{t("about.experienceText")}</p>
+              <p className="whitespace-pre-line">{t("about.experienceText")}</p>
 
               <h2>{t("about.education")}</h2>
               <p>{t("about.educationText")}</p>
 
               <h2>{t("about.skills")}</h2>
               <ul>
-                <li>Swift ve Objective-C</li>
-                <li>SwiftUI ve UIKit</li>
+                <li>Swift</li>
+                <li>SwiftUI</li>
+                <li>UIKit</li>
                 <li>MVVM, MVC, Clean Architecture</li>
                 <li>Core Data, Realm</li>
                 <li>RESTful API entegrasyonu</li>
                 <li>Unit ve UI Testing</li>
                 <li>CI/CD (Fastlane, Jenkins)</li>
-                <li>Git ve versiyon kontrolü</li>
+                <li>Git</li>
               </ul>
 
               <h2>{t("about.interests")}</h2>
@@ -103,8 +104,6 @@ function XIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
@@ -113,8 +112,9 @@ function XIcon(props: React.SVGProps<SVGSVGElement>) {
       strokeLinejoin="round"
       {...props}
     >
-      <path d="M18 6L6 18" />
-      <path d="M6 6L18 18" />
+      <path d="M4 4l11.733 16h4.267l-11.733-16z" />
+      <path d="M4 20l6.768-6.768" />
+      <path d="M20 4l-7.955 7.955" />
     </svg>
   )
 }

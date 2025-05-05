@@ -18,7 +18,6 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   // CSS optimizasyonu için ek seçenekler
-  optimizeCSS: false, // CSS optimizasyonunu devre dışı bırak
   poweredByHeader: false
 };
 
