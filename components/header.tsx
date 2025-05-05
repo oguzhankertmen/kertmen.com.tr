@@ -70,7 +70,7 @@ export function Header() {
           })}
         </nav>
 
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center space-x-4">
           <ThemeToggle />
           <LanguageSwitcher />
           <Button variant="ghost" size="icon" className="md:hidden" onClick={() => setIsMobileMenuOpen(true)}>
@@ -104,6 +104,10 @@ export function Header() {
               {item.name}
             </Link>
           ))}
+          <div className="flex items-center space-x-4 mt-6">
+            <ThemeToggle />
+            <LanguageSwitcher />
+          </div>
         </nav>
       </motion.div>
     </header>

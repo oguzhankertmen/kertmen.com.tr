@@ -1,12 +1,6 @@
 import { type NextRequest, NextResponse } from "next/server"
 
 // Bu bir örnek API route'udur. Gerçek uygulamada daha güvenli bir kimlik doğrulama sistemi kullanılmalıdır.
-export const dynamic = 'force-static'
-
-export async function GET() {
-  return new Response('Not implemented', { status: 501 })
-}
-
 export async function POST(request: NextRequest) {
   try {
     const { email, password } = await request.json()

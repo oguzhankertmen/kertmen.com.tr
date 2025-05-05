@@ -1,87 +1,74 @@
 "use client"
 
-import { useState, useEffect } from "react"
-import { useTheme } from "@/components/theme-provider"
-import { Button } from "@/components/ui/button"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
-import { Moon, Sun, Monitor } from "lucide-react"
-import { useLocale } from "@/hooks/use-locale"
-import { motion, AnimatePresence } from "framer-motion"
+import { useTheme } from "@/hooks/use-theme"
+import { motion } from "framer-motion"
+import { useEffect, useState } from "react"
 
 export function ThemeToggle() {
-  const { setTheme, resolvedTheme } = useTheme()
+  const { theme, toggleTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
-  const { t } = useLocale()
-  const [isOpen, setIsOpen] = useState(false)
 
   // Sadece client-side'da render edildiğinden emin oluyoruz
   useEffect(() => {
     setMounted(true)
   }, [])
 
-  // Tema değişikliğini anında uygulamak için
-  const handleThemeChange = (newTheme: string) => {
-    setTheme(newTheme)
-    setIsOpen(false)
-
-    // Tema değişikliğini anında uygulamak için
-    const root = window.document.documentElement
-    root.classList.remove("light", "dark")
-
-    if (newTheme === "system") {
-      const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"
-      root.classList.add(systemTheme)
-    } else {
-      root.classList.add(newTheme)
-    }
-  }
-
   if (!mounted) {
-    return (
-      <Button variant="ghost" size="icon" className="rounded-full">
-        <Moon className="h-[1.2rem] w-[1.2rem]" />
-        <span className="sr-only">Toggle theme</span>
-      </Button>
-    )
+    return <div className="w-10 h-6 rounded-full bg-neutral-200 dark:bg-neutral-700" />
   }
 
   return (
-    <DropdownMenu open={isOpen} onOpenChange={setIsOpen}>
-      <DropdownMenuTrigger asChild>
-        <Button variant="ghost" size="icon" className="rounded-full focus:outline-none focus:ring-0">
-          {resolvedTheme === "dark" ? (
-            <Moon className="h-[1.2rem] w-[1.2rem]" />
-          ) : (
-            <Sun className="h-[1.2rem] w-[1.2rem]" />
-          )}
-          <span className="sr-only">Toggle theme</span>
-        </Button>
-      </DropdownMenuTrigger>
-      <AnimatePresence>
-        {isOpen && (
-          <DropdownMenuContent align="end" asChild forceMount>
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.95 }}
-              transition={{ duration: 0.2 }}
-            >
-              <DropdownMenuItem onClick={() => handleThemeChange("light")}>
-                <Sun className="mr-2 h-4 w-4" />
-                <span>{t("theme.light")}</span>
-              </DropdownMenuItem>
-              <DropdownMenuItem onClick={() => handleThemeChange("dark")}>
-                <Moon className="mr-2 h-4 w-4" />
-                <span>{t("theme.dark")}</span>
-              </DropdownMenuItem>
-              <DropdownMenuItem onClick={() => handleThemeChange("system")}>
-                <Monitor className="mr-2 h-4 w-4" />
-                <span>{t("theme.system")}</span>
-              </DropdownMenuItem>
-            </motion.div>
-          </DropdownMenuContent>
+    <button
+      onClick={toggleTheme}
+      className={`relative w-10 h-6 rounded-full transition-colors duration-300 focus:outline-none ${
+        theme === "dark" ? "bg-neutral-700" : "bg-neutral-200"
+      }`}
+      aria-label="Toggle theme"
+    >
+      <motion.div
+        className="absolute left-0.5 top-0.5 w-5 h-5 rounded-full bg-white shadow-sm flex items-center justify-center"
+        animate={{
+          x: theme === "dark" ? 16 : 0,
+        }}
+        transition={{
+          type: "spring",
+          stiffness: 500,
+          damping: 30,
+        }}
+      >
+        {theme === "dark" ? (
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            className="w-3 h-3 text-neutral-700"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+            />
+          </svg>
+        ) : (
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            className="w-3 h-3 text-amber-500"
+          >
+            <circle cx={12} cy={12} r={5} strokeWidth={2} />
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"
+            />
+          </svg>
         )}
-      </AnimatePresence>
-    </DropdownMenu>
+      </motion.div>
+    </button>
   )
 }

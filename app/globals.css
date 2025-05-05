@@ -91,19 +91,10 @@ html {
   background: #5e5e5e;
 }
 
-/* Remove focus ring for mouse users */
-.js-focus-visible :focus:not(.focus-visible) {
-  outline: none;
-}
-
-/* Button focus styles */
-button:focus {
-  outline: none;
-}
-
-button:focus-visible {
-  outline: 2px solid var(--ring);
-  outline-offset: 2px;
+/* Theme transition */
+html.light,
+html.dark {
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Responsive adjustments */

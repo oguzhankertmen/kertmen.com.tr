@@ -1,31 +1,31 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Statik export için yapılandırma
+  // CloudFlare Pages ile uyumlu yapılandırma
   output: 'export',
-  // Görüntü optimizasyonu için CloudFlare Images'ı kullan
+  // Statik HTML dışa aktarımı sırasında görüntüleri optimize etme
   images: {
     unoptimized: true,
   },
-  // Dinamik sayfaları belirt
-  trailingSlash: true,
+  // CloudFlare Pages'in _routes.json dosyasını kullanmasını sağla
+  // Bu, tüm rotaların doğru şekilde işlenmesini sağlar
+  trailingSlash: false,
+  // Derleme sırasında hataları görmezden gel
   eslint: {
     ignoreDuringBuilds: true,
   },
   typescript: {
     ignoreBuildErrors: true,
   },
-  // Statik olarak oluşturulacak sayfaları belirt
-  exportPathMap: async function () {
-    return {
-      '/': { page: '/' },
-      '/blog': { page: '/blog' },
-      '/hakkimda': { page: '/hakkimda' },
-      '/iletisim': { page: '/iletisim' },
-      '/bookmarks': { page: '/bookmarks' },
-      '/admin': { page: '/admin' },
-      '/admin/blog': { page: '/admin/blog' },
-      '/admin/login': { page: '/admin/login' },
-    }
+  // CloudFlare Workers için gerekli ayarlar
+  experimental: {
+    // Statik HTML dışa aktarımı için gerekli
+    appDir: true,
+    // Daha küçük paket boyutu için
+    optimizeCss: true,
+    // Daha hızlı derleme için
+    turbotrace: {
+      logLevel: 'error',
+    },
   },
 };
 

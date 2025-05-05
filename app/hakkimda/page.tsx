@@ -1,8 +1,10 @@
 "use client"
 
+import type React from "react"
+
 import Link from "next/link"
 import Image from "next/image"
-import { ArrowLeft, Github, Linkedin, Mail, Twitter } from "lucide-react"
+import { ArrowLeft, Github, Linkedin, Mail } from "lucide-react"
 import { SocialLink } from "@/components/social-link"
 import { useLocale } from "@/hooks/use-locale"
 import { motion } from "framer-motion"
@@ -49,15 +51,15 @@ export default function AboutPage() {
                   className="object-cover"
                 />
               </div>
-              <div className="flex justify-center md:justify-start space-x-4 mb-6">
-                <SocialLink href="https://github.com/kertmen" icon={<Github className="h-5 w-5" />} label="GitHub" />
-                <SocialLink href="https://twitter.com/kertmen" icon={<Twitter className="h-5 w-5" />} label="Twitter" />
+              <div className="flex justify-center md:justify-start gap-3">
+                <SocialLink href="https://github.com/kertmen" icon={<Github className="h-4 w-4" />} label="GitHub" />
+                <SocialLink href="https://x.com/kertmen" icon={<XIcon className="h-4 w-4" />} label="X (Twitter)" />
                 <SocialLink
                   href="https://linkedin.com/in/kertmen"
-                  icon={<Linkedin className="h-5 w-5" />}
+                  icon={<Linkedin className="h-4 w-4" />}
                   label="LinkedIn"
                 />
-                <SocialLink href="mailto:info@kertmen.com.tr" icon={<Mail className="h-5 w-5" />} label="E-posta" />
+                <SocialLink href="mailto:info@kertmen.com.tr" icon={<Mail className="h-4 w-4" />} label="E-posta" />
               </div>
             </div>
           </div>
@@ -93,5 +95,26 @@ export default function AboutPage() {
         </motion.div>
       </motion.main>
     </div>
+  )
+}
+
+// X (Twitter) ikonu
+function XIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M18 6L6 18" />
+      <path d="M6 6L18 18" />
+    </svg>
   )
 }

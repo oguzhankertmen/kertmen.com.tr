@@ -1,10 +1,9 @@
 import type React from "react"
 import "@/app/globals.css"
 import { Inter } from "next/font/google"
-import { ThemeProvider } from "@/components/theme-provider"
 import { Header } from "@/components/header"
-import { PageTransition } from "@/components/page-transition"
 import { LocaleProvider } from "@/hooks/use-locale"
+import { ThemeProvider } from "@/hooks/use-theme"
 import { Footer } from "@/components/footer"
 
 const inter = Inter({ subsets: ["latin"] })
@@ -22,14 +21,37 @@ export default function RootLayout({
 }) {
   return (
     <html lang="tr" suppressHydrationWarning>
-      <body className={`${inter.className} min-h-screen flex flex-col`}>
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem storageKey="kertmen-theme">
+      <head>
+        {/* Tema değişimini önlemek için script */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  const theme = localStorage.getItem("theme");
+                  if (theme === "light") {
+                    document.documentElement.classList.remove('dark');
+                    document.documentElement.classList.add('light');
+                  } else {
+                    document.documentElement.classList.remove('light');
+                    document.documentElement.classList.add('dark');
+                  }
+                } catch (e) {
+                  document.documentElement.classList.add('dark');
+                }
+              })();
+            `,
+          }}
+        />
+      </head>
+      <body className={`${inter.className} flex flex-col min-h-screen`}>
+        <ThemeProvider>
           <LocaleProvider>
-            <Header />
-            <div className="flex-grow">
-              <PageTransition>{children}</PageTransition>
+            <div className="flex flex-col min-h-screen">
+              <Header />
+              <main className="flex-grow">{children}</main>
+              <Footer />
             </div>
-            <Footer />
           </LocaleProvider>
         </ThemeProvider>
       </body>
