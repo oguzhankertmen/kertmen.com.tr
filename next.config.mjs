@@ -2,6 +2,7 @@
 const nextConfig = {
   // CloudFlare Pages ile uyumlu yapılandırma
   output: 'export',
+  distDir: 'out',
   // Statik HTML dışa aktarımı sırasında görüntüleri optimize etme
   images: {
     unoptimized: true,
