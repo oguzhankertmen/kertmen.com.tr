@@ -4,6 +4,14 @@ import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
 import { useLocale } from "@/hooks/use-locale"
 
+// Statik olarak oluşturulacak blog yazılarının slug'larını tanımla
+export async function generateStaticParams() {
+  return [
+    { slug: 'swiftui-ile-modern-ui-tasarimi' },
+    // Diğer blog yazılarının slug'larını buraya ekleyebilirsiniz
+  ]
+}
+
 export default function BlogPostPage({ params }: { params: { slug: string } }) {
   const { t } = useLocale()
 
