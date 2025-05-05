@@ -14,7 +14,7 @@ type LocaleContextType = {
 const LocaleContext = createContext<LocaleContextType | undefined>(undefined)
 
 // Global değişken - sayfa geçişlerinde korunur
-let globalLocale: Locale = "en"
+let globalLocale: Locale = "tr"
 
 export function LocaleProvider({ children }: { children: ReactNode }) {
   const [locale, setLocaleState] = useState<Locale>(globalLocale)
@@ -26,7 +26,7 @@ export function LocaleProvider({ children }: { children: ReactNode }) {
     const savedLocale = localStorage.getItem("locale") as Locale
 
     // Geçerli bir locale değeri mi kontrol et
-    const newLocale = savedLocale === "tr" ? "tr" : "en"
+    const newLocale = savedLocale === "en" ? "en" : "tr"
 
     // Global değişkeni güncelle
     globalLocale = newLocale
@@ -56,7 +56,7 @@ export function LocaleProvider({ children }: { children: ReactNode }) {
   }
 
   const t = (key: string): string => {
-    if (!mounted) return dictionary["en"][key] || key
+    if (!mounted) return dictionary["tr"][key] || key
     // Her seferinde dictionary'den al, önbelleklemeye izin verme
     return dictionary[locale]?.[key] || key
   }
