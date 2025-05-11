@@ -3,6 +3,7 @@ import { BlogPostPageClient } from "./BlogPostPageClient"
 // Bu fonksiyon build zamanında hangi slug'ların statik olarak oluşturulacağını belirtir
 export function generateStaticParams() {
   return [
+    { slug: "stepper-component-design-uibezierpath-swift" },
     { slug: "swiftui-modern-ui-tasarimi" },
     { slug: "ios-16-yeni-ozellikler" },
     { slug: "swift-concurrency-asenkron-programlama" },

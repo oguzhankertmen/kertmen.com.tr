@@ -51,6 +51,8 @@ export const dictionary: Dictionary = {
     "blog.post5.date": "15 Aralık 2022",
     "blog.post6.title": "iOS Uygulamalarında Test Yazımı",
     "blog.post6.date": "2 Kasım 2022",
+    "blog.post7.title": "UIBezierPath ile Stepper Komponenti Tasarımı",
+    "blog.post7.date": "17 Mayıs 2023",
 
     // Projects
     "project.fitness.title": "Fitness Takip Uygulaması",
@@ -70,7 +72,7 @@ export const dictionary: Dictionary = {
       "Zubizu - Doğuş Teknoloji\n Zip BNPL - Innovance Consultancy\n Juzdan - Innovance Consultancy/Akbank",
     "about.education": "Eğitim",
     "about.educationText":
-      "Karadeiz Teknik Üniversitesi - Bilgisayar Mühendisliği bölümünden mezun oldum. Eğitimim sırasında, mobil uygulama geliştirme ve kullanıcı arayüzü tasarımı konularına özel ilgi gösterdim.",
+      "Karadeniz Teknik Üniversitesi - Bilgisayar Mühendisliği bölümünden mezun oldum. Eğitimim sırasında, mobil uygulama geliştirme ve kullanıcı arayüzü tasarımı konularına özel ilgi gösterdim.",
     "about.skills": "Beceriler",
     "about.interests": "İlgi Alanları",
     "about.interestsText":
@@ -160,6 +162,8 @@ export const dictionary: Dictionary = {
     "blog.post5.date": "December 15, 2022",
     "blog.post6.title": "Writing Tests for iOS Applications",
     "blog.post6.date": "November 2, 2022",
+    "blog.post7.title": "UIBezierPath ile Stepper Komponenti Tasarımı",
+    "blog.post7.date": "May 17, 2023",
 
     // Projects
     "project.fitness.title": "Fitness Tracking App",
@@ -175,10 +179,10 @@ export const dictionary: Dictionary = {
       "Hello, I'm Oğuzhan Kertmen. I've been working in iOS development for over 3 years. Throughout my career, I've focused on developing performant and sustainable mobile applications that prioritize user experience.",
     "about.experience": "Experience",
     "about.experienceText":
-      "Zubizu - Dogus Technology\n Zip BNPL - Innovance Consultancy\n Juzdan - Innovance Consultancy/Akbank",
+      "Zubizu - Doğuş Technology\n Zip BNPL - Innovance Consultancy\n Juzdan - Innovance Consultancy/Akbank",
     "about.education": "Education",
     "about.educationText":
-          "I graduated from Karadeniz Technical University with a degree in Computer Engineering. During my education, I had a special interest in mobile app development and user interface design.",
+      "Karadeniz Teknik Üniversitesi - Bilgisayar Mühendisliği bölümünden mezun oldum. Eğitimim sırasında, mobil uygulama geliştirme ve kullanıcı arayüzü tasarımı konularına özel ilgi gösterdim.",
     "about.skills": "Skills",
     "about.interests": "Interests",
     "about.interestsText":

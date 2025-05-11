@@ -7,6 +7,13 @@ export default function BlogPostsAdmin() {
   // Bu veri normalde bir CMS veya veritabanından gelecektir
   const blogPosts = [
     {
+      id: "7",
+      title: "UIBezierPath ile Stepper Komponenti Tasarımı",
+      status: "Yayında",
+      date: "17 Mayıs 2023",
+      views: 0,
+    },
+    {
       id: "1",
       title: "SwiftUI ile Modern UI Tasarımı",
       status: "Yayında",

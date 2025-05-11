@@ -11,6 +11,11 @@ export default function BlogPage() {
   // Bu veri normalde bir CMS veya veritabanından gelecektir
   const blogPosts = [
     {
+      title: t("blog.post7.title"),
+      date: t("blog.post7.date"),
+      slug: "/blog/stepper-component-design-uibezierpath-swift",
+    },
+    {
       title: t("blog.post1.title"),
       date: t("blog.post1.date"),
       slug: "/blog/swiftui-modern-ui-tasarimi",
